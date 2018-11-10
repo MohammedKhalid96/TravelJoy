@@ -1,0 +1,99 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    color:  $gray-btn-txt-color;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+.heading-primary {
+    text-transform: uppercase;
+    color: $white-txt-color;
+    backface-visibility: hidden; // fix animation shake issue at the end 
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        animation-delay: .2s;
+        // animation-iteration-count: 2;
+
+        @include respond(tab-port) {
+            letter-spacing: 1rem;
+            font-size: 5rem; 
+        }
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 1.2rem;
+        // transform: translate(-8px, 0); 
+        animation-name: moveInRight;
+        animation-duration: 2s;
+        animation-delay: .2s;
+        text-align: center;
+        margin-bottom: 3rem;
+
+        @include respond(tab-port) {
+            letter-spacing: .5rem;
+        }
+    }
+}
+
+.heading-secondary {
+    display: inline-block;
+    letter-spacing: .7rem;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    background-image: linear-gradient(to right, black, $light-primary-color, $sun-color);
+    // applay linear-gradient to the text in next two lines
+    -webkit-background-clip: text; 
+    color: transparent;
+
+    @include respond(tab-port) {
+        font-size: 3rem; 
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem; 
+    }
+}
+
+.heading {
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, black, $light-primary-color, $sun-color);
+    // applay linear-gradient to the text in next two lines
+    -webkit-background-clip: text; 
+    color: transparent;;
+}
+
+.paragraph {
+    &:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+}
+
+.heading-tertiary {
+    text-transform: uppercase;
+}
+
+.book {
+    .heading-secondary {
+        font-size: 2.7rem;
+
+        @include respond(tab-port) {
+            font-size: 2.2rem;
+        }
+    }
+
+    @include respond(tab-port) {
+        .u-margin-bottom-medium {
+            margin-bottom: 0;
+        }
+    }
+}

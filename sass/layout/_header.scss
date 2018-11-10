@@ -1,0 +1,34 @@
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient( to right bottom, 
+    $light-sun-color,
+    $light-primary-color, 
+    $light-black-color ), 
+    url("../img/bg.jpg");
+    background-attachment: fixed;
+    background-position: center; /* crop from all directions but center */
+    border: 1px solid $white-txt-color; 
+    border-bottom: 0;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 85vh, 100% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 85vh, 100% 0); /* VIP // clippy tool site */
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    /* VIP How to center things */
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;    
+    }
+}

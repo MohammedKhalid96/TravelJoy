@@ -1,0 +1,148 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /* = 10px */ }
+
+body {
+  padding: 3rem;
+  /* = 30px // rem related to the root element @html */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #777;
+  overflow-x: hidden;
+  line-height: 1.7;
+  box-sizing: border-box; }
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(255, 204, 128, 0.85), rgba(136, 14, 78, 0.85), rgba(0, 0, 0, 0.85)), url("../img/hero.jpg");
+  background-position: center;
+  /* crop from all directions but center */
+  border: 1px solid #fff;
+  clip-path: polygon(0 0, 0 100%, 100% 85vh, 100% 0);
+  /* VIP // clippy tool site */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+
+/* //VIP How to center things */
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.heading-primary {
+  text-transform: uppercase;
+  color: #fff;
+  backface-visibility: hidden;
+  /* fix animation shake issue at the end */ }
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-delay: .2s;
+  /*
+      animation-iteration-count: 2;
+  */ }
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1.2rem;
+  /* transform: translate(-8px, 0); */
+  animation-name: moveInRight;
+  animation-duration: 2s;
+  animation-delay: .2s;
+  text-align: center;
+  margin-bottom: 3rem; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-8rem); }
+  80% {
+    transform: translateX(2rem); }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem); }
+  80% {
+    transform: translateX(-2rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translatey(3rem); }
+  100% {
+    opacity: 1;
+    transform: translatey(0); } }
+.btn:link,
+.btn:visited {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all .3s; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+
+.btn::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  z-index: -1;
+  transition: all .3s; }
+
+.btn--white::after {
+  background-color: #fff; }
+
+.btn:hover::after {
+  transform: scalex(1.5) scaleY(1.4);
+  opacity: 0; }
+
+.btn--animated {
+  animation-name: moveInTop;
+  animation-duration: 2s;
+  animation-delay: 2.3s;
+  animation-fill-mode: backwards;
+  /* applaied all the styles of the element to 0% before it starts */ }

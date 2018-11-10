@@ -1,0 +1,108 @@
+.btn {
+    &:link,
+    &:visited {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+        transition: all .4s;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($black, 0.2);
+
+        &::after {
+            transform: scalex(1.5) scaleY(1.4);
+            opacity: 0;
+        }
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($black, 0.2);
+    }
+    
+    &--white {
+        background-color: $white-txt-color;
+        color: $gray-btn-txt-color;
+
+        &::after {
+            background-color: $white-txt-color;
+        }
+    }
+    
+    &::after {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        z-index: -1;
+        transition: all .3s;
+    }
+    
+    &--animated {
+        animation-name: moveInTop;
+        animation-duration: 2s;
+        animation-delay: 2.3s;
+        animation-fill-mode: backwards; /* applaied all the styles of the element to 0% before it starts */
+    }  
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        position: relative;
+        color: $white-txt-color;
+        text-decoration: none;
+        display: inline-block;
+        background-color: $primary-color;
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+        transition: all .3s;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 .7rem 2rem rgba($black, 0.2);
+
+        &::after {
+            transform: scalex(1.5) scaleY(1.4);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .3rem 1rem rgba($black, 0.2);
+    }
+
+    &--white {
+        background-color: $primary-color;
+
+        &::after {
+            background-color: $primary-color;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+        z-index: -1;
+        transition: all .3s;
+    }
+}
+

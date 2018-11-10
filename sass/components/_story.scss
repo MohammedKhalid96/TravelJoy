@@ -1,0 +1,80 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba(black, .1);
+    padding: 5rem;
+    border-radius: 3px;
+    background-color: rgba(white, .6);
+    padding-left: 8rem;
+    transform: skewX(-12deg);
+    margin-bottom: 5rem;
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 3.5rem;
+        padding-left: 6rem;
+    }
+
+    @include respond(phone) {
+        transform: skew(0);
+    }
+
+    &__shape {
+        position: relative;
+        width: 15rem;
+        height: 15rem;
+        // VIP // how to make text flow around shapes with shape-outside and float
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skew(0);
+            width: 11rem;
+            height: 11rem;
+        }
+    }
+
+    &__img {
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
+        transition: all .4s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skew(0);
+        }
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 10%);
+        color: white;
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+        transition: all .4s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-2rem) scale(1.1);
+        // apply a filter to images
+        filter: blur(3px) brightness(70%);
+    }
+}

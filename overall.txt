@@ -1,0 +1,94 @@
+- Block Element Modifier.
+
+sass is a css perprocessor, an extension of css that adds power and elegance to the basic language.
+
+- variables 
+- nesting 
+- operators
+- partials and imports to write css in different files 
+- mixins to write reusable pieces of code 
+- functions  
+- extends to make different selectors inherit declarations that are common to all of them
+- control directives for writting complex code using conditionals and loops
+
+// .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------
+
+- how to architect and build a simple grid system
+- how the attribute selector works
+- how the :not pseudo class works
+- how clac() works, and what's the difference between calc() and simple sass operations
+
+# :not pseudo class -- example: 
+    li {
+        color: #fff;
+        &:not(:last-child) {
+            margin-bottom: 20px; // all li will have 20px margin-bottom but not the last li
+        }
+    }
+
+
+# calc: calculate different units -- example
+    width: calc((100% -2* #{$width-variable}) / 3);
+
+
+# attribute selector -- example 
+    [class^="col-"] { // select all elements which its class attribute starts with col-  
+        background-color: red;
+        color: gray;
+    }
+
+// *******************************************************************************
+
+// ----------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------
+
+- how and why using utility classes : ex: u-cnter-text
+- how to use background-clip property
+- how to use the outline-offset property together with outline
+- how to style elements that are not hovered while others are
+- how to transform multiple properties simultaneously
+
+- direct child selector & > * {}
+
+- use perspective in css
+- use backface-visibility property
+- using background blend modes
+- box-decoration-break
+
+- how to make text flow around shapes with shape-outside and float
+- apply a filter to images
+- object-fit property
+
+// ----------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------
+
+- solid-color-gradients
+- sibling selectors
+- ::input-placeholder pseudo element
+- build custom radio buttons 
+
+// ----------------------------------------------------------------------------------------------------------------
+
+- what the checkbox hack is
+- animate solid-color gradients
+- use transform-origin
+- cubic bezier curves
+- backdrop-filter
+
+// ---------------------------------------------------------------------------------------------------------------
+
+Responsive images
+1# resolution switching ( decrease image resolution in smaller screen ).
+2# density switching ( half the image resolution on @1x screen ).
+3# art direction ( different image on smaller screen ).
+
+// --------------------------------------------------------------------------------------------------------------
+
+graceful degradation with @support

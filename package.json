@@ -1,0 +1,19 @@
+{
+  "name": "travel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "author": "Mohammed khalid",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
